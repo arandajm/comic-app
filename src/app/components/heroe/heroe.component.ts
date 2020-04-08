@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Heroe, HeroesService } from '../../services/heroes.service';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-heroe',
@@ -8,6 +8,7 @@ import { Heroe, HeroesService } from '../../services/heroes.service';
 })
 export class HeroeComponent implements OnInit {
   heroe: any = {};
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private _heroesService: HeroesService
