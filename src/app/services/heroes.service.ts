@@ -73,9 +73,11 @@ export class HeroesService {
   }
 
   getHeroesByTerm(searchTerm: string): Heroe[] {
-    return this.heroes.filter((hero) =>
-      hero.nombre.toLowerCase().includes(searchTerm)
-    );
+    return this.heroes.filter((hero, i) => {
+      // Adding id to hero
+      hero.id = i;
+      return hero.nombre.toLowerCase().includes(searchTerm);
+    });
   }
 }
 
@@ -86,4 +88,5 @@ export interface Heroe {
   img: string;
   aparicion: string;
   casa: string;
+  id?: number;
 }
