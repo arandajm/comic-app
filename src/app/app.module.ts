@@ -14,6 +14,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroesService } from './services/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { SearchComponent } from './components/search/search.component';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SearchComponent } from './components/search/search.component';
     HeroesComponent,
     HeroeComponent,
     SearchComponent,
+    HeroeTarjetaComponent,
   ],
   imports: [BrowserModule, FormsModule, APP_ROUTING],
   providers: [HeroesService],
