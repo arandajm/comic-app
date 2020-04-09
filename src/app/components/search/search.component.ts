@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from '../../services/heroes.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -8,10 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   heroes: Heroe[] = [];
-  term: string = '';
+  term: string;
   constructor(
     private _heroesService: HeroesService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -19,5 +20,9 @@ export class SearchComponent implements OnInit {
       this.term = params['term'];
       this.heroes = this._heroesService.getHeroesByTerm(this.term);
     });
+  }
+
+  VerHeroe(idx: number) {
+    this.router.navigate(['/heroe', idx]);
   }
 }
